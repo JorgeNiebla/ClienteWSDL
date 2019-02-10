@@ -1,0 +1,114 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Cliente con WSDL">
+    <meta name="author" content="Jorge Niebla">
+    <title>Cliente con WSDL</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Font-Awesome-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/site.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+	<script>
+		function Send_callBack(r)
+		{
+			if(r.constructor.toString().indexOf("function Error()") != -1)
+				alert("ERROR\r\n\r\n" + r.description + "\r\n\r\n[" + r.number + "]");
+			else
+				alert(r);
+		}
+	
+        function Calcular() {
+			var url = "http://www.dneonline.com/calculator.asmx";
+            var arg1 = document.getElementById("Arg1");
+            var arg2 = document.getElementById("Arg2");
+            var op = document.getElementById("Op");
+
+            var p = new SOAPClientParameters();
+            p.add("intA", arg1.value);
+            p.add("intB", arg2.value);
+                        
+            SOAPClient.invoke(url, op.value, p, true, Send_callBack);
+		}
+	</script>
+</head>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Cliente con WSDL</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="index.html">Home</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <input style="color:white;" type="text" readonly class="form-control-plaintext" value="Operación">
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="number" class="form-control" id="Arg1" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label class="sr-only"></label>
+                    <select class="form-control" id="Op">
+                        <option value="0">Suma</option>
+                        <option value="1">Resta</option>
+                        <option value="2">Multiplicación</option>
+                        <option value="3">División</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <input type="number" class="form-control" id="Arg2" />
+                </div>
+                <input type="button" onclick="Calcular()" value="Calcular" class="btn btn-primary" />
+            </div>
+            <!--<div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <h4>Mp4 usando etiqueta video</h4>
+                <video id="video" src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay="autoplay" />
+            </div>-->
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Ejemplo de Cliente con WSDL, desarrollado por Jorge Niebla.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/holder.min.js"></script>
+    <script src="js/soapclient.js"></script>
+</body>
+
+</html>
