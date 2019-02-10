@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServiceReference1
+namespace CalculadoraWS
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.CalculatorSoap")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CalculadoraWS.CalculatorSoap")]
     public interface CalculatorSoap
     {
         
@@ -30,13 +30,13 @@ namespace ServiceReference1
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    internal interface CalculatorSoapChannel : ServiceReference1.CalculatorSoap, System.ServiceModel.IClientChannel
+    public interface CalculatorSoapChannel : CalculadoraWS.CalculatorSoap, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    internal partial class CalculatorSoapClient : System.ServiceModel.ClientBase<ServiceReference1.CalculatorSoap>, ServiceReference1.CalculatorSoap
+    public partial class CalculatorSoapClient : System.ServiceModel.ClientBase<CalculadoraWS.CalculatorSoap>, CalculadoraWS.CalculatorSoap
     {
         
     /// <summary>

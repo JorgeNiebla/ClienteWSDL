@@ -6,8 +6,8 @@
   },
   "ExtendedData": {
     "Uri": "http://www.dneonline.com/calculator.asmx",
-    "Namespace": "ServiceReference1",
-    "SelectedAccessLevelForGeneratedClass": "Internal",
+    "Namespace": "CalculadoraWS",
+    "SelectedAccessLevelForGeneratedClass": "Public",
     "GenerateMessageContract": false,
     "ReuseTypesinReferencedAssemblies": true,
     "ReuseTypesinAllReferencedAssemblies": true,
@@ -21,7 +21,7 @@
     },
     "CheckedReferencedAssemblies": [],
     "InstanceId": null,
-    "Name": "ServiceReference1",
+    "Name": "CalculadoraWS",
     "Metadata": {}
   }
 }

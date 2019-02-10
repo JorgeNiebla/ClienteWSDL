@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CalculadoraWS;
 using Microsoft.AspNetCore.Mvc;
-using ServiceReference1;
 
 namespace ClienteWSDL.Controllers
 {

@@ -29,28 +29,6 @@
             }
         }
     </style>
-	<script>
-		function Send_callBack(r)
-		{
-			if(r.constructor.toString().indexOf("function Error()") != -1)
-				alert("ERROR\r\n\r\n" + r.description + "\r\n\r\n[" + r.number + "]");
-			else
-				alert(r);
-		}
-	
-        function Calcular() {
-			var url = "http://www.dneonline.com/calculator.asmx";
-            var arg1 = document.getElementById("Arg1");
-            var arg2 = document.getElementById("Arg2");
-            var op = document.getElementById("Op");
-
-            var p = new SOAPClientParameters();
-            p.add("intA", arg1.value);
-            p.add("intB", arg2.value);
-                        
-            SOAPClient.invoke(url, op.value, p, true, Send_callBack);
-		}
-	</script>
 </head>
 
 <body class="text-center">
@@ -101,14 +79,26 @@
             </div>
         </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>
-        window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')
+        window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
     </script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/holder.min.js"></script>
-    <script src="js/soapclient.js"></script>
+    <script>
+        function Calcular() {
+            var arg1 = document.getElementById("Arg1");
+            var arg2 = document.getElementById("Arg2");
+            var op = document.getElementById("Op");
+
+            $.getJSON("api/calculadora/" + op.value + "/" + arg1.value + "/" + arg2.value,
+                function (response) {
+                    alert(response);
+                }
+            );
+        }
+    </script>
 </body>
 
 </html>
