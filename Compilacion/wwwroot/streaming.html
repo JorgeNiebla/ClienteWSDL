@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Clientes de Streaming">
+    <meta name="author" content="Jorge Niebla">
+    <title>Clientes de Streaming</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Font-Awesome-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/site.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Clientes de Streaming</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" href="Streaming.html">Cliente Html5</a>
+                    <a class="nav-link" href="http://wordpress.nbgz.me">Cliente Wordpress</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">			
+			<div class="container">
+			  <div class="row">
+				<div class="col">
+					<h4>Youtube usando etiqueta iframe</h4>
+					<iframe width="320" height="215" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+				</div>
+				<div class="col">
+					<h4>Mp4 usando etiqueta video</h4>
+					<video width="320" height="215" id="video" src="https://www.w3schools.com/html/mov_bbb.mp4" controls="controls" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<hr>
+					<h4>Mi streaming en vivo usando el reproductor de MistServer</h4>
+					<div class="mistvideo" id="livestream_NtDAQboJET8X">
+					  <noscript>
+						<a href="http://nbgz.ddns.net:8080/livestream.html" target="_blank">
+						  Presione aqui para reproducir el video
+						</a>
+					  </noscript>
+					  <script>
+						var a = function(){
+						  mistPlay("livestream",{
+							target: document.getElementById("livestream_NtDAQboJET8X")
+						  });
+						};
+						if (!window.mistplayers) {
+						  var p = document.createElement("script");
+						  p.src = "http://nbgz.ddns.net:8080/player.js"
+						  document.head.appendChild(p);
+						  p.onload = a;
+						}
+						else { a(); }
+					  </script>
+					</div>
+				</div>
+			  </div>
+			</div>
+			<!--<div class="col-sm-6">
+				
+			</div>
+			<div class="col-sm-6">
+				<h4>Mp4 usando etiqueta video</h4>
+				<video id="video" src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay="autoplay" />
+			</div>-->
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Ejemplo de clientes de streaming, desarrollado por Jorge Niebla.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/holder.min.js"></script>
+</body>
+
+</html>
